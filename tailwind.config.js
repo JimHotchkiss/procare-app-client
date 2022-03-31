@@ -7,7 +7,7 @@ module.exports = {
       colors: {
         primary: '#0f172a',
         secondary: '#1e293b',
-        call_to_action: '#edb32b'
+        call_to_action: '#ecb52a'
 
       }
     },

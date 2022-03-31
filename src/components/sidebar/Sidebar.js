@@ -1,6 +1,6 @@
 import React from 'react'
 import SideBarBtn from './SideBarBtn'
-import { AiFillDashboard, AiFillSignal, AiOutlineCloudServer } from "react-icons/ai"
+import { AiFillDashboard, AiOutlineCloudServer } from "react-icons/ai"
 import { DiAtom } from "react-icons/di"
 
 const Sidebar = () => {

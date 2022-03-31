@@ -3,10 +3,10 @@ import React from 'react'
 const SideBarBtn = ({ icon }) => {
   return (
     <div>
-        <button 
-            className="sidebar-icon">
-            {icon}
-    </button>
+      <button 
+        className="btn-icon">
+        {icon}
+      </button>
     </div>
   )
 }

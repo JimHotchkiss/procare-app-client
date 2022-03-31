@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-  .sidebar-icon {
+  .btn-icon {
     @apply flex items-center justify-center
     h-14 w-14 mx-auto m-4 bg-primary text-gray-100
     hover:bg-slate-700 hover:text-call_to_action rounded-3xl
