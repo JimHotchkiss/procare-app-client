@@ -6,6 +6,7 @@ import { FcBarChart } from "react-icons/fc"
 import { FaChartBar } from "react-icons/fa"
 import Sidebar from './components/sidebar/Sidebar';
 import ContentBtn from './components/content/ContentBtn';
+import BarGraph from './components/graph/BarGraph';
 
 
 
@@ -35,7 +36,6 @@ function App() {
 
   const graphToggleHandler = () => {
     setGraphToggle(!graphToggle)
-    alert(cycleTime)
   }
 
 
@@ -56,6 +56,8 @@ function App() {
         startIcon={<FaChartBar size={40}/>}
         stopIcon={<FcBarChart size={40}/>}
       />
+      {graphToggle ? <BarGraph /> : null}
+      
     </div>
   );
 }
