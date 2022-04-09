@@ -9,4 +9,9 @@
     hover:bg-slate-700 hover:text-call_to_action rounded-3xl
     hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer 
   }
+  .clicked-btn-icon {
+    @apply flex items-center justify-center
+    h-14 w-14 mx-auto m-4 text-call_to_action
+    bg-slate-700 rounded-xl cursor-pointer 
+  }
 }

@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import { GiAutoRepair } from "react-icons/gi"
 import { MdQueuePlayNext } from "react-icons/md"
-import { FcBarChart } from "react-icons/fc"
-import { FaChartBar } from "react-icons/fa"
 import Sidebar from './components/sidebar/Sidebar';
+import ContentBody from './components/content/ContentBody';
 import ContentBtn from './components/content/ContentBtn';
 import BarGraph from './components/graph/BarGraph';
 
@@ -43,20 +42,22 @@ function App() {
 
   return (
     <div className='h-[2000px] bg-primary flex'>
-      <Sidebar />
+      <Sidebar 
+        btnCondition={graphToggle}
+        btnFunction={graphToggleHandler}
+      />
+      <ContentBody 
+        graphToggle={graphToggle}
+      />
+
       <ContentBtn 
         btnCondition={timerActive}
         btnFunction={timerHandler}
         startIcon={<GiAutoRepair size={40}/>}
         stopIcon={<MdQueuePlayNext size={40}/>}
       />
-      <ContentBtn 
-        btnCondition={graphToggle}
-        btnFunction={graphToggleHandler}
-        startIcon={<FaChartBar size={40}/>}
-        stopIcon={<FcBarChart size={40}/>}
-      />
-      {graphToggle ? <BarGraph /> : null}
+
+      {/* {graphToggle ? <BarGraph /> : null} */}
       
     </div>
   );

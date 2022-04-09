@@ -1,13 +1,18 @@
 import React from 'react'
 import SideBarBtn from './SideBarBtn'
-import { AiFillDashboard, AiOutlineCloudServer } from "react-icons/ai"
+import { AiOutlineCloudServer } from "react-icons/ai"
+import { VscGraphLine } from "react-icons/vsc"
 import { DiAtom } from "react-icons/di"
 
-const Sidebar = () => {
+const Sidebar = ({ btnFunction, btnCondition}) => {
   return (
     <div className='h-screen sticky top-0 py-4 w-40 bg-secondary'>
-       <SideBarBtn 
-        icon={<AiFillDashboard size={40} />}
+       <SideBarBtn
+        btnFunction={btnFunction} 
+        btnCondition={btnCondition}
+        icon={<VscGraphLine size={40}/>}
+      
+       
        />
        <SideBarBtn 
         icon={<AiOutlineCloudServer size={40} />}

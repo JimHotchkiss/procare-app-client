@@ -1,8 +1,10 @@
 import React from 'react'
+import BarGraph from '../graph/BarGraph';
 
-const ContentBody = () => {
+const ContentBody = ({ graphToggle}) => {
   return (
-    <div>ContentBody</div>
+    <div className='w-full'>{graphToggle ? <BarGraph /> : "Content Body"}</div>
+
   )
 }
 

@@ -46,7 +46,7 @@ const data = [ {
     amt: 2100,
   },];
   return (
-    <ResponsiveContainer width="30%" height="30%">
+    <ResponsiveContainer width="80%" height="30%">
         <BarChart
             width={500}
             height={300}
