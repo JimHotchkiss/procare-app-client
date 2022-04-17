@@ -14,18 +14,26 @@ function App() {
   const [seconds, setSeconds] = useState(0);
   const [cycleTime, setCycleTime] = useState(0)
   const [graphToggle, setGraphToggle] = useState(false)
+  const url = "http://localhost:3000/api/v1/"
+
+  // useEffect(() => {
+  //     let interval = null;
+  //     if (timerActive) {
+  //         interval = setInterval(() => {
+  //             setSeconds(seconds => seconds + 1)
+  //         }, 1000)
+  //     } else if (!timerActive && seconds !== 0) {
+  //         clearInterval(interval)
+  //     }
+  //     return () => clearInterval(interval)
+  // }, [timerActive, seconds])
 
   useEffect(() => {
-      let interval = null;
-      if (timerActive) {
-          interval = setInterval(() => {
-              setSeconds(seconds => seconds + 1)
-          }, 1000)
-      } else if (!timerActive && seconds !== 0) {
-          clearInterval(interval)
-      }
-      return () => clearInterval(interval)
-  }, [timerActive, seconds])
+    fetch(url + 'instructions/1')
+      .then(response => response.json())
+      .then(data => console.log(data))
+
+  }, [])
 
   const timerHandler = () => {
     setCycleTime(seconds)
@@ -42,7 +50,8 @@ function App() {
 
   return (
     <div className='h-[2000px] bg-primary flex'>
-      <Sidebar 
+      App
+      {/* <Sidebar 
         btnCondition={graphToggle}
         btnFunction={graphToggleHandler}
       />
@@ -55,7 +64,7 @@ function App() {
         btnFunction={timerHandler}
         startIcon={<GiAutoRepair size={40}/>}
         stopIcon={<MdQueuePlayNext size={40}/>}
-      />
+      /> */}
 
       {/* {graphToggle ? <BarGraph /> : null} */}
       
