@@ -29,7 +29,7 @@ function App() {
   // }, [timerActive, seconds])
 
   useEffect(() => {
-    fetch(url + 'instructions/1')
+    fetch(url + 'repairs/4')
       .then(response => response.json())
       .then(data => console.log(data))
 
@@ -50,8 +50,7 @@ function App() {
 
   return (
     <div className='h-[2000px] bg-primary flex'>
-      App
-      {/* <Sidebar 
+      <Sidebar 
         btnCondition={graphToggle}
         btnFunction={graphToggleHandler}
       />
@@ -64,7 +63,7 @@ function App() {
         btnFunction={timerHandler}
         startIcon={<GiAutoRepair size={40}/>}
         stopIcon={<MdQueuePlayNext size={40}/>}
-      /> */}
+      />
 
       {/* {graphToggle ? <BarGraph /> : null} */}
       

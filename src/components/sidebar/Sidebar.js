@@ -6,7 +6,7 @@ import { DiAtom } from "react-icons/di"
 
 const Sidebar = ({ btnFunction, btnCondition}) => {
   return (
-    <div className='h-screen sticky top-0 py-4 w-40 bg-secondary'>
+    <div className='h-screen sticky top-0 left-0 py-4 w-40 bg-secondary'>
        <SideBarBtn
         btnFunction={btnFunction} 
         btnCondition={btnCondition}

@@ -5,44 +5,58 @@ import {  BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Res
 const BarGraph = () => {
 const data = [ {
     name: 'Page A',
-    uv: 4000,
-    pv: 2400,
+    step1: 4000,
+    step2: 2400,
+    step3: 3200,
+    step4: 1800,
     amt: 2400,
   },
   {
     name: 'Page B',
-    uv: 3000,
-    pv: 1398,
+    step1: 3200,
+    step2: 5400,
+    step3: 1200,
+    step4: 4800,
     amt: 2210,
   },
   {
     name: 'Page C',
-    uv: 2000,
-    pv: 9800,
+    step1: 5000,
+    step2: 5400,
+    step3: 2200,
+    step4: 1800,
     amt: 2290,
   },
   {
     name: 'Page D',
-    uv: 2780,
-    pv: 3908,
+    step1: 1000,
+    step2: 2400,
+    step3: 3200,
+    step4: 4800,
     amt: 2000,
   },
   {
     name: 'Page E',
-    uv: 1890,
-    pv: 4800,
+    step1: 4000,
+    step2: 3400,
+    step3: 2200,
+    step4: 1800,
     amt: 2181,
   },
   {
     name: 'Page F',
-    uv: 2390,
-    pv: 3800,
+    step1: 5000,
+    step2: 4400,
+    step3: 3200,
+    step4: 2800,
     amt: 2500,
   },
   {
     name: 'Page G',
-    uv: 3490,
-    pv: 4300,
+    step1: 1000,
+    step2: 2400,
+    step3: 3200,
+    step4: 4800,
     amt: 2100,
   },];
   return (
@@ -63,8 +77,12 @@ const data = [ {
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="pv" fill="#ecb52a" />
-            <Bar dataKey="uv" fill="gray" />
+            <Bar dataKey="step1" fill="#9b5de5" />
+            <Bar dataKey="step2" fill="#f15bb5" />
+            <Bar dataKey="step3" fill="#fee440" />
+            <Bar dataKey="step4" fill="#00bbf9" />
+            <Bar dataKey="step5" fill="#00f5d4" />
+            <Bar dataKey="step6" fill="#3f37c9" />
         </BarChart>
     </ResponsiveContainer>
     
