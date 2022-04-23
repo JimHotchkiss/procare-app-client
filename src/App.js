@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import { GiAutoRepair } from "react-icons/gi"
-import { MdQueuePlayNext } from "react-icons/md"
 import Sidebar from './components/sidebar/Sidebar';
 import ContentBody from './components/content/ContentBody';
-import ContentBtn from './components/content/ContentBtn';
-import BarGraph from './components/graph/BarGraph';
+import Navigation from './components/navigation/Navigation';
+
 
 
 
 function App() {
+  const [instructions, setInstructions] = useState()
   const [timerActive, setTimerActive] = useState(false)
   const [seconds, setSeconds] = useState(0);
   const [cycleTime, setCycleTime] = useState(0)
@@ -29,9 +28,9 @@ function App() {
   // }, [timerActive, seconds])
 
   useEffect(() => {
-    fetch(url + 'repairs/4')
+    fetch(url + 'instructions')
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => console.log(data[0].repairs))
 
   }, [])
 
@@ -49,24 +48,21 @@ function App() {
 
 
   return (
-    <div className='h-[2000px] bg-primary flex'>
-      <Sidebar 
-        btnCondition={graphToggle}
-        btnFunction={graphToggleHandler}
-      />
-      <ContentBody 
-        graphToggle={graphToggle}
-      />
-
-      <ContentBtn 
-        btnCondition={timerActive}
-        btnFunction={timerHandler}
-        startIcon={<GiAutoRepair size={40}/>}
-        stopIcon={<MdQueuePlayNext size={40}/>}
-      />
-
-      {/* {graphToggle ? <BarGraph /> : null} */}
-      
+    <div className="flex">
+      <div> 
+        <Sidebar 
+          btnCondition={graphToggle}
+          btnFunction={graphToggleHandler}
+        />
+      </div>
+      <div className='flex justify-items-center align-center w-full bg-primary'> 
+        <ContentBody 
+          graphToggle={graphToggle}
+        />
+      </div>
+      <div> 
+        <Navigation />
+      </div>
     </div>
   );
 }

@@ -60,7 +60,7 @@ const data = [ {
     amt: 2100,
   },];
   return (
-    <ResponsiveContainer width="80%" height="30%">
+    <ResponsiveContainer width="100%" height="90%">
         <BarChart
             width={500}
             height={300}
@@ -72,17 +72,15 @@ const data = [ {
             bottom: 5,
             }}
         >
-            <CartesianGrid strokeDasharray="3 3" />
+            <CartesianGrid strokeDasharray="2 2" />
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="step1" fill="#9b5de5" />
-            <Bar dataKey="step2" fill="#f15bb5" />
-            <Bar dataKey="step3" fill="#fee440" />
-            <Bar dataKey="step4" fill="#00bbf9" />
-            <Bar dataKey="step5" fill="#00f5d4" />
-            <Bar dataKey="step6" fill="#3f37c9" />
+            <Bar barSize={20} dataKey="step1" fill="#6bbed0" />
+            <Bar barSize={20} dataKey="step2" fill="#ecb52a" />
+            <Bar barSize={20} dataKey="step3" fill="#213b5d" />
+            <Bar barSize={20} dataKey="step4" fill="#E3655B" />
         </BarChart>
     </ResponsiveContainer>
     

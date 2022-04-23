@@ -3,6 +3,7 @@ import SideBarBtn from './SideBarBtn'
 import { AiOutlineCloudServer } from "react-icons/ai"
 import { VscGraphLine } from "react-icons/vsc"
 import { DiAtom } from "react-icons/di"
+import { RiAdminFill } from "react-icons/ri"
 
 const Sidebar = ({ btnFunction, btnCondition}) => {
   return (
@@ -18,7 +19,7 @@ const Sidebar = ({ btnFunction, btnCondition}) => {
         icon={<AiOutlineCloudServer size={40} />}
        />
        <SideBarBtn 
-        icon={<DiAtom size={40} />}
+        icon={<RiAdminFill size={40} />}
        />
     </div>
     
