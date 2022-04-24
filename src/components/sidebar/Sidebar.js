@@ -2,7 +2,6 @@ import React from 'react'
 import SideBarBtn from './SideBarBtn'
 import { AiOutlineCloudServer } from "react-icons/ai"
 import { VscGraphLine } from "react-icons/vsc"
-import { DiAtom } from "react-icons/di"
 import { RiAdminFill } from "react-icons/ri"
 
 const Sidebar = ({ btnFunction, btnCondition}) => {

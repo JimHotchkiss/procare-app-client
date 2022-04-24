@@ -8,7 +8,8 @@ import Navigation from './components/navigation/Navigation';
 
 
 function App() {
-  const [instructions, setInstructions] = useState()
+  const [instructions, setInstructions] = useState([])
+  const [instruction, setInstruction] = useState({})
   const [timerActive, setTimerActive] = useState(false)
   const [seconds, setSeconds] = useState(0);
   const [cycleTime, setCycleTime] = useState(0)
@@ -28,9 +29,9 @@ function App() {
   // }, [timerActive, seconds])
 
   useEffect(() => {
-    fetch(url + 'instructions')
+    fetch(url + 'instructions/1')
       .then(response => response.json())
-      .then(data => console.log(data[0].repairs))
+      .then(data => setInstruction(data))
 
   }, [])
 
@@ -57,6 +58,7 @@ function App() {
       </div>
       <div className='flex justify-items-center align-center w-full bg-primary'> 
         <ContentBody 
+          instruction = {instruction}
           graphToggle={graphToggle}
         />
       </div>
