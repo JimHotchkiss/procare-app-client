@@ -8,7 +8,8 @@ import Navigation from './components/navigation/Navigation';
 
 
 function App() {
-  const [instructions, setInstructions] = useState([])
+  const [steps, setSteps] = useState([])
+  const [loading, setLoading] = useState(false)
   const [instruction, setInstruction] = useState({})
   const [timerActive, setTimerActive] = useState(false)
   const [seconds, setSeconds] = useState(0);
@@ -29,9 +30,12 @@ function App() {
   // }, [timerActive, seconds])
 
   useEffect(() => {
+    setLoading(true)
     fetch(url + 'instructions/1')
       .then(response => response.json())
       .then(data => setInstruction(data))
+      .catch(error => console.log(error))
+      .finally(setLoading(false))
 
   }, [])
 
@@ -45,12 +49,20 @@ function App() {
     setGraphToggle(!graphToggle)
   }
 
+  const stepHandler = e => {
+    let repairId = e.target.id 
+    fetch(url + `repairs/${repairId}`)
+      .then(response => response.json())
+      .then(data => setSteps(data.steps))
+  }
+
 
 
 
   return (
     <div className="flex">
       <div> 
+        {console.log('App', steps)}
         <Sidebar 
           btnCondition={graphToggle}
           btnFunction={graphToggleHandler}
@@ -59,7 +71,9 @@ function App() {
       <div className='flex justify-items-center align-center w-full bg-primary'> 
         <ContentBody 
           instruction = {instruction}
+          loading = {loading}
           graphToggle={graphToggle}
+          stepHandler={stepHandler}
         />
       </div>
       <div> 
